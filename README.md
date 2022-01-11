@@ -10,4 +10,4 @@
 - Farben und Fonts sollten die in Utility definierten verwendet werden. 
 
 
-![](AsbusAufgabe01/Aufgabe_image.png)
+![](AsbusAufgabe01/Aufgabe_img01.png)
