@@ -76,6 +76,7 @@ class AsbusCreditViewController: UIViewController {
         label.textColor = .asbusGray5
         label.font = .asbusFontP2
         label.textAlignment = .left
+        label.numberOfLines = 2
         return label
     }()
     
@@ -85,6 +86,7 @@ class AsbusCreditViewController: UIViewController {
         label.textColor = .asbusGray5
         label.font = .asbusFontP3
         label.textAlignment = .left
+        label.numberOfLines = 2
         return label
     }()
     
@@ -111,28 +113,29 @@ class AsbusCreditViewController: UIViewController {
         //general variables
         let safeTop = view.safeAreaInsets.top
         let textLabelWidth = view.width - 2 * .horizontalSpacing
-        let textSpacing = view.height / 15
-        
+        let whiteSpace = view.height / 15
+        let textSpacing = view.height / 20
+        let buttonSpacing = view.height / 40
         //headerlabel
-        headerLabel.frame = CGRect(x: .horizontalSpacing, y: safeTop, width: textLabelWidth, height: headerLabel.font.capHeight)
+        headerLabel.frame = CGRect(x: .horizontalSpacing, y: safeTop + textSpacing, width: textLabelWidth, height: headerLabel.font.capHeight)
         
         //creditLabel
-        creditLabel.frame = CGRect(x: .horizontalSpacing, y: headerLabel.bottom, width: textLabelWidth, height: creditLabel.font.capHeight)
+        creditLabel.frame = CGRect(x: .horizontalSpacing, y: headerLabel.bottom + textSpacing, width: textLabelWidth, height: creditLabel.font.capHeight * 2)
         
         //divider
         divider.frame = CGRect(x: .horizontalSpacing, y: creditLabel.bottom, width: textLabelWidth, height: 2)
         
         //redeemLabel
-        redeemLabel.frame = CGRect(x: .horizontalSpacing, y: divider.bottom, width: textLabelWidth, height: redeemLabel.font.lineHeight * 2)
+        redeemLabel.frame = CGRect(x: .horizontalSpacing, y: divider.bottom + textSpacing, width: textLabelWidth, height: redeemLabel.font.lineHeight * 2)
         
         //descriptionLabel
         descriptionLabel.frame = CGRect(x: .horizontalSpacing, y: redeemLabel.bottom, width: textLabelWidth, height: descriptionLabel.font.lineHeight * 3)
         
         //codeField
-        codeField.frame = CGRect(x: .horizontalSpacing, y: descriptionLabel.bottom, width: textLabelWidth, height: codeField.minimumFontSize * 3)
+        codeField.frame = CGRect(x: .horizontalSpacing, y: descriptionLabel.bottom + whiteSpace, width: textLabelWidth, height: codeField.minimumFontSize * 3)
         
         //redeemCodeButton
-        redeemCodeButton.frame = CGRect(x: .horizontalSpacing, y: codeField.bottom, width: textLabelWidth, height: view.height / 20)
+        redeemCodeButton.frame = CGRect(x: .horizontalSpacing, y: codeField.bottom + buttonSpacing, width: textLabelWidth, height: view.height / 20)
         
         //restrictionLabel
         restrictionLabel.frame = CGRect(x: .horizontalSpacing, y: redeemCodeButton.bottom, width: textLabelWidth, height: restrictionLabel.font.lineHeight * 2)
